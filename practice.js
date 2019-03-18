@@ -51,7 +51,7 @@ first(names, function(firstName){
 
 //Code Here
 function last(arr,callback){
- callback(arr[0])
+ callback(arr.length - 1)
 }
 // Do not edit the code below.
 last(names, function(lastName){
@@ -70,8 +70,8 @@ last(names, function(lastName){
 */
 
 //Code Here
-function multiply(1,2,cb){
-callback(1,2,*)
+function multiply(one,two,cb){
+cb(one * two)
 };
 // Do not edit the code below.
 multiply(4, 3, function(answer){
@@ -91,9 +91,12 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here 
-function contains([],collins,callback){
-  if ([collins])
-  callback(false)
+function contains(arr,collins,callback){
+  if (arr.inclucollins) {
+  callback(false);
+}else{
+  callback(true);
+ }
 };
 
 // Do not edit the code below.
@@ -116,9 +119,13 @@ contains(names, 'Colt', function(result){
 */
 
 //Code Here
-function uniq([],callback){
+function uniq( names,callback){
+  for ( let i = 0; i < arr.length; i++) {
+    cb(arr[i], i)
+      names.splice()
+    }
+  };
 
-};
 // Do not edit the code below.
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
@@ -136,9 +143,10 @@ uniq(names, function(uniqArr){
 
 //Code Here 
 function each([collins,tim],callback){
-  callback([collins])
-  callback([tim])
-  arr.forEach((cur,i))=>cb(cur,i)
+ for(var i = 0; i < arr.length; i++){
+  callback(arr[i], i)
+ }
+ arr.foreach((cur, i)=>(cur, i))
 };
 // Do not edit the code below.
 each(names, function(item, indice){
