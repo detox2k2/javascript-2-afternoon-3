@@ -50,13 +50,12 @@ first(names, function(firstName){
 */
 
 //Code Here
-function last(arr,callback){
- callback(arr.length - 1)
+function last(named,callback){
+ callback(named[last.length - 1])
 }
 // Do not edit the code below.
-last(names, function(lastName){
-  console.log('The last name in names is ' + lastName);
-  return lastName;
+last(name, function(lastName){
+  console.log('The last name in name is ' + lastName);
 });
 // Do not edit the code above.
 
@@ -91,13 +90,14 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here 
-function contains(arr,collins,callback){
-  if (arr.inclucollins) {
-  callback(false);
-}else{
+function contains(names,checkExist,callback){
+  for(var i = 0; i < names.length; i++){
+  if (names[i] === checkExist) {
   callback(true);
  }
-};
+} 
+callback(false);
+}
 
 // Do not edit the code below.
 contains(names, 'Colt', function(result){
@@ -119,12 +119,18 @@ contains(names, 'Colt', function(result){
 */
 
 //Code Here
-function uniq( names,callback){
-  for ( let i = 0; i < arr.length; i++) {
-    cb(arr[i], i)
-      names.splice()
+function uniq(names,callback){
+  for ( var i = 0; i < names.length; i++) {
+    for (var j = i + 1; j < names.length; j++) {
+    if (names[i] === names[j]) {
+      names.splice(i, 1)
+      i--;
     }
-  };
+  }
+}
+callback(names);
+}
+
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
@@ -142,12 +148,16 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here 
-function each([collins,tim],callback){
- for(var i = 0; i < arr.length; i++){
-  callback(arr[i], i)
- }
- arr.foreach((cur, i)=>(cur, i))
-};
+var names = ['collins','tim']
+function each(arr, cb) {
+    for (var i = 0; i < arr.length; i++){
+      cb(arr[i], i)
+    
+    } 
+    
+  }
+  
+  
 // Do not edit the code below.
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
@@ -164,16 +174,13 @@ each(names, function(item, indice){
 */
 
 // Code here
-function getUserById ([users],id,callback){
- console.log(users);
-console.log(users[0].id);
-for(let i = 0; i < users.length; i++){
-   console.log(users[i].id);
-   if(users[i].id === id) {
-
-   }
+function getUserById (arr, id, cb){
+  for(var i = 0; i < arr.length; i++){
+    if (id /*15a*/=== arr[i].id){
+      return cb(arr[i])
+    }
+  }
 }
-};
 // Do not edit the code below.
 var users = [
   {
