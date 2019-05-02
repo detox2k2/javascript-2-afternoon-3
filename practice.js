@@ -28,9 +28,9 @@
 */
 
 // Code Here 
-function first(arr,cb){
-  cb(arr[0])
-};
+function first (array,callback){
+  return callback(array[0])
+}
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 
@@ -50,8 +50,8 @@ first(names, function(firstName){
 */
 
 //Code Here
-function last(named,callback){
- callback(named[last.length - 1])
+function last (array, callback){
+  return callback(array[array.length-1])
 }
 // Do not edit the code below.
 last(name, function(lastName){
@@ -69,9 +69,9 @@ last(name, function(lastName){
 */
 
 //Code Here
-function multiply(one,two,cb){
-cb(one * two)
-};
+function multiply (num1,num2,callback){
+  return callback(num1*num2)
+}
 // Do not edit the code below.
 multiply(4, 3, function(answer){
   console.log('The answer is ' + answer); //should console.log 12
@@ -90,15 +90,11 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here 
-function contains(names,checkExist,callback){
-  for(var i = 0; i < names.length; i++){
-  if (names[i] === checkExist) {
-  callback(true);
- }
-} 
-callback(false);
+function contains ( array,name, callback){
+  for (var i = 0; i < array.length; i++){
+    return (array[i] === name ) ? callback(true) : callback(false)
+  }
 }
-
 // Do not edit the code below.
 contains(names, 'Colt', function(result){
   if(result === true){
@@ -131,7 +127,15 @@ function uniq(names,callback){
 callback(names);
 }
 
-
+// function evenFinder (nums) {
+//   let evens = []
+//   for (var i = 0; i < nums.length; i++) {
+//     if (nums[i] % 2 === 0) {
+//       evens.push(nums[i])
+//     }
+//   }
+//   return evens
+// }
 // Do not edit the code below.
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
@@ -148,14 +152,9 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here 
-var names = ['collins','tim']
-function each(arr, cb) {
-    for (var i = 0; i < arr.length; i++){
-      cb(arr[i], i)
-    
-    } 
-    
-  }
+function each(array, callback){
+  array.forEach(item => callback(item, array.indexOf(item)));
+}
   
   
 // Do not edit the code below.
@@ -174,10 +173,10 @@ each(names, function(item, indice){
 */
 
 // Code here
-function getUserById (arr, id, cb){
-  for(var i = 0; i < arr.length; i++){
-    if (id /*15a*/=== arr[i].id){
-      return cb(arr[i])
+function getUserById(array, id, callback){
+  for(var i=0; i< array.length; i++){
+    if(array[i].id === id){
+      return callback(array[i]);
     }
   }
 }
